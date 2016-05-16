@@ -1,0 +1,30 @@
+<h1> Rock, Paper, Scissors </h1>
+
+<% if @win == nil %>
+	<form action="/" method="POST">
+		<input type="text" name="name" placeholder="Player Name">
+
+		<h3> Player 1 choice </h3>
+		<select name="player1_choice">
+			<option value="rock">Rock</option>
+			<option value="scissors">Scissors</option>
+			<option value="paper">Paper</option>
+		</select>
+
+		<input type="submit">
+	</form>
+<% end %>
+
+<% if @result %>
+	<h2> RESULT: </h2>
+	<h3><%= @result %></h3>
+	<h4><%= @win %></h4>
+	<h3> Your Score: </h3>
+	<p><%= @human_win %></p>
+	<h3> Opponent's Score: </h3>
+	<p><%= @computer_win %></p>
+<% end %>
+
+<% if @win %>
+	<h2> <a href="/"> Play Again! </a> </h2>
+<% end %>
